@@ -8,8 +8,8 @@ public class calculateCost
     double packageBCost;
     double smallStorageCost;
     double largeStorageCost;
-    double boxesSmallcost;
-    double boxesLargecost;
+    double boxesSmallCost;
+    double boxesLargeCost;
 
     public double getPackageACost() {
         return packageACost;
@@ -44,19 +44,19 @@ public class calculateCost
     }
 
     public double getBoxesSmallcost() {
-        return boxesSmallcost;
+        return boxesSmallCost;
     }
 
     public void setBoxesSmallcost(double boxesSmallcost) {
-        this.boxesSmallcost = 2.50;
+        this.boxesSmallCost = 2.50;
     }
 
     public double getBoxesLargecost() {
-        return boxesLargecost;
+        return boxesLargeCost;
     }
 
     public void setBoxesLargecost(double boxesLargecost) {
-        this.boxesLargecost = 4.50;
+        this.boxesLargeCost = 4.50;
     }
 
     private static double getServices(double priceA, double priceB) {
@@ -86,7 +86,8 @@ public class calculateCost
         {
             return smallStorageCost;
         }
-        else if(storageOptions.equalsIgnoreCase("L")){
+        else if(storageOptions.equalsIgnoreCase("L"))
+        {
             return largeStorageCost;
         }
         else
@@ -95,5 +96,22 @@ public class calculateCost
         }
     }
 
+    private static double getBoxOption(double boxesSmallCost, double boxesLargeCost) {
+        String boxOptions = JOptionPane.showInputDialog(null,
+                "Please enter type of storage box (S/L) you want from the following" +
+                        "\n$" + boxesSmallCost + " for small Storage or $" +
+                        boxesLargeCost + " for large storage");
+        if(boxOptions.equalsIgnoreCase("S"))
+        {
+            return boxesSmallCost;
+        }
+        else if(boxOptions.equalsIgnoreCase("L"))
+        {
+            return boxesLargeCost;
+        }else
+        {
+            return 0.0;
+        }
+    }
 
 }
