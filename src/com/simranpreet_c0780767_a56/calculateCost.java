@@ -109,7 +109,7 @@ public class calculateCost
 
     private static double getServices(double priceA, double priceB) {
         String servicePackage = JOptionPane.showInputDialog(null,
-                "Enter type of service: " +
+                "Please Enter type of service: " +
                         "\n$" + " we have package A and B. The package A cost :" + priceA + "And package B cost : " + priceB );
         if(servicePackage.equalsIgnoreCase("A"))
         {
