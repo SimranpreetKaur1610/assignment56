@@ -1,5 +1,7 @@
 package com.simranpreet_c0780767_a56;
 
+import javax.swing.*;
+
 public class calculateCost
 {
     double packageACost;
@@ -55,5 +57,23 @@ public class calculateCost
 
     public void setBoxesLargecost(double boxesLargecost) {
         this.boxesLargecost = 4.50;
+    }
+
+    private static double getServices(double priceA, double priceB) {
+        String servicePackage = JOptionPane.showInputDialog(null,
+                "Enter type of service: " +
+                        "\n$" + " we have package A and B. The package A cost :" + priceA + "And package B cost : " + priceB );
+        if(servicePackage.equalsIgnoreCase("A"))
+        {
+            return priceA;
+        }
+        else if(servicePackage.equalsIgnoreCase("B"))
+        {
+            return priceB;
+        }
+        else
+        {
+            return 0.0;
+        }
     }
 }
