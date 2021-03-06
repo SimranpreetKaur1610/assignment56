@@ -76,4 +76,24 @@ public class calculateCost
             return 0.0;
         }
     }
+
+    private static double getOptions(double smallStorageCost, double largeStorageCost) {
+        String storageOptions = JOptionPane.showInputDialog(null,
+                "Enter type of storage : " +
+                        "\n$" + " we have Small Storage and Large Storage. The package A cost :" + smallStorageCost +
+                        largeStorageCost + " for large storage");
+        if(storageOptions.equalsIgnoreCase("S"))
+        {
+            return smallStorageCost;
+        }
+        else if(storageOptions.equalsIgnoreCase("L")){
+            return largeStorageCost;
+        }
+        else
+        {
+            return 0.0;
+        }
+    }
+
+
 }
