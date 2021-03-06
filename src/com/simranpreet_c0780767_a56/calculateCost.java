@@ -75,7 +75,7 @@ public class calculateCost
         JOptionPane.showMessageDialog(null,"Please Enter Simran as username and Kaur as password");
         while (true){
             String userName = JOptionPane.showInputDialog(
-                    null,"Please enter user name ");
+                    null,"Please enter username ");
             String userPassword = JOptionPane.showInputDialog(
                     null,"Please enter the password ");
             if(userName.equals("Simran") && userPassword.equals("Kaur")){
@@ -109,8 +109,7 @@ public class calculateCost
 
     private static double getServices(double priceA, double priceB) {
         String servicePackage = JOptionPane.showInputDialog(null,
-                "Please Enter type of service: " +
-                        "\n$" + " we have package A and B. The package A cost :" + priceA + "And package B cost : " + priceB );
+                "Please Enter type of service : A or B.\n"+ "Package-A cost :" + priceA + " \nPackage-B cost : " + priceB );
         if(servicePackage.equalsIgnoreCase("A"))
         {
             return priceA;
@@ -126,15 +125,14 @@ public class calculateCost
     }
 
     private static double getOptions(double smallStorageCost, double largeStorageCost) {
-        String servicePackage = JOptionPane.showInputDialog(null,
-                "Enter type of storage : " +
-                        "\n$" + " we have Small Storage and Large Storage. The package A cost :" + smallStorageCost +
-                        largeStorageCost + " for large storage");
-        if(servicePackage.equalsIgnoreCase("S"))
+        String options = JOptionPane.showInputDialog(null,
+                "Please Enter type of Storage option : S or L.\n"+ "Small Storage cost :"
+                        + smallStorageCost + " \nLarge Storage cost : " + largeStorageCost);
+        if(options.equalsIgnoreCase("S"))
         {
             return smallStorageCost;
         }
-        else if(servicePackage.equalsIgnoreCase("L"))
+        else if(options.equalsIgnoreCase("L"))
         {
             return largeStorageCost;
         }
@@ -145,15 +143,14 @@ public class calculateCost
     }
 
     private static double getBoxOption(double boxesSmallCost, double boxesLargeCost) {
-        String servicePackage = JOptionPane.showInputDialog(null,
-                "Please enter type of storage box (S/L) you want from the following" +
-                        "\n$" + boxesSmallCost + " for small Storage or $" +
-                        boxesLargeCost + " for large storage");
-        if(servicePackage.equalsIgnoreCase("S"))
+        String itemsOptions = JOptionPane.showInputDialog(null,
+                "Please Enter type of items : S or L.\n"+ "Small boxes cost :"
+                        + boxesSmallCost + " \nLarge Boxes cost : " + boxesLargeCost );
+        if(itemsOptions.equalsIgnoreCase("S"))
         {
             return boxesSmallCost;
         }
-        else if(servicePackage.equalsIgnoreCase("L"))
+        else if(itemsOptions.equalsIgnoreCase("L"))
         {
             return boxesLargeCost;
         }else
