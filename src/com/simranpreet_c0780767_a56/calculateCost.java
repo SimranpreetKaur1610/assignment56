@@ -82,11 +82,11 @@ public class calculateCost
                 JOptionPane.showMessageDialog(null,
                         "You have successfully logged in");
                 double servicePackage = getServices(cost.getPackageACost(),cost.getPackageBCost());
-                System.out.println(servicePackage);
+                System.out.println("Service cost : $"+servicePackage);
                 double storageOption = getOptions(cost.getSmallStorageCost(),cost.getLargeStorageCost());
-                System.out.println(storageOption);
+                System.out.println("Options of storage cost : $"+storageOption);
                 double boxOption = getBoxOption(cost.getBoxesSmallcost(),cost.getBoxesLargecost());
-                System.out.println(boxOption);
+                System.out.println("Item cost : $"+boxOption);
                 JOptionPane.showMessageDialog(null,
                         "Service cost : $"+ servicePackage );
                 JOptionPane.showMessageDialog(null,
@@ -95,6 +95,7 @@ public class calculateCost
                         "Item cost : $"+ boxOption );
                 JOptionPane.showMessageDialog(null,
                         "The total final cost : $"+ (servicePackage + storageOption + boxOption) );
+                System.out.println("The total final cost : $"+(servicePackage + storageOption + boxOption));
                 break;
             }else{
                 JOptionPane.showMessageDialog(null,
