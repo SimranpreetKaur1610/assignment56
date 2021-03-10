@@ -4,12 +4,12 @@ import javax.swing.*;
 
 public class calculateCost
 {
-    double packageACost;
-    double packageBCost;
-    double smallStorageCost;
-    double largeStorageCost;
-    double boxesSmallCost;
-    double boxesLargeCost;
+    private double packageACost;
+    private double packageBCost;
+    private double smallStorageCost;
+    private double largeStorageCost;
+    private double boxesSmallCost;
+    private double boxesLargeCost;
 
     public calculateCost(){
         setPackageACost();
