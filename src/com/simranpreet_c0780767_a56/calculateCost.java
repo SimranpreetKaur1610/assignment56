@@ -71,6 +71,7 @@ public class calculateCost
     public static void main(String[] args) {
         calculateCost cost = new calculateCost();
 
+        String input;
         int j = 0;
         JOptionPane.showMessageDialog(null,"Please Enter Simran as username and Kaur as password");
         while (true){
@@ -82,20 +83,31 @@ public class calculateCost
                 JOptionPane.showMessageDialog(null,
                         "You have successfully logged in");
                 double servicePackage = getServices(cost.getPackageACost(),cost.getPackageBCost());
-                System.out.println("Service cost : $"+servicePackage);
+                input = JOptionPane.showInputDialog(null,"How many hours you want this service: ");
+                double hoursService = Double.parseDouble(input);
+                double totalService = servicePackage * hoursService;
+                System.out.println("Service cost : $"+totalService);
+
                 double storageOption = getOptions(cost.getSmallStorageCost(),cost.getLargeStorageCost());
-                System.out.println("Options of storage cost : $"+storageOption);
+                input = JOptionPane.showInputDialog(null,"How many days you want this option: ");
+                double dayOptions = Double.parseDouble(input);
+                double totalOptions = storageOption * dayOptions;
+                System.out.println("Options of storage cost : $"+totalOptions);
+
                 double boxOption = getBoxOption(cost.getBoxesSmallcost(),cost.getBoxesLargecost());
-                System.out.println("Item cost : $"+boxOption);
+                input = JOptionPane.showInputDialog(null,"How many boxes you want this item: ");
+                double boxItems = Double.parseDouble(input);
+                double totalBoxes = boxOption * boxItems;
+                System.out.println("Item cost : $"+totalBoxes);
+
                 JOptionPane.showMessageDialog(null,
-                        "Service cost : $"+ servicePackage );
-                JOptionPane.showMessageDialog(null,
-                        "Options of storage cost : $"+ storageOption );
-                JOptionPane.showMessageDialog(null,
-                        "Item cost : $"+ boxOption );
-                JOptionPane.showMessageDialog(null,
-                        "The total final cost : $"+ (servicePackage + storageOption + boxOption) );
-                System.out.println("The total final cost : $"+(servicePackage + storageOption + boxOption));
+                        userName+"'s Receipt"+
+                                "\nService cost : $"+ totalService+
+                                "\n\nOptions of storage cost : $"+ totalOptions +
+                                "\n\nItem cost : $"+ totalBoxes+
+                                "\n\nThe total final cost : $\n"+ (totalService + totalOptions + totalBoxes)
+                        );
+                System.out.println("The total final cost : $\n"+(totalService + totalOptions + totalBoxes));
                 break;
             }else{
                 JOptionPane.showMessageDialog(null,
